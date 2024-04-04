@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:srcCompat="@mipmap/fakebook_logo" />
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/blue"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/etUserame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/blue"
+            android:textAlignment="center"
+            android:hint="Username"
+            android:inputType="text"/>
+
+
+        <EditText
+            android:id="@+id/etDOB"
+            android:layout_width="match_parent"
+            android:textColorHint="@color/blue"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:hint="Date Of Birth (dd/mm/yyy)"
+            android:inputType="date" />
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/blue"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:layout_below="@id/emailEditText"
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/confirmPasswordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:textColorHint="@color/blue"
+            android:textAlignment="center"
+            android:inputType="textPassword"
+            android:layout_below="@id/passwordEditText"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/registerButton"
+            style="@style/Widget.fakeBook.Button"
+            app:shapeAppearanceOverlay="@style/buttonShape"
+            android:layout_below="@id/confirmPasswordEditText"
+            android:layout_marginStart="145dp"
+            android:layout_marginTop="28dp"
+            android:text="Register" />
+
+        <Button
+            android:id="@+id/loginPageButton"
+            style="@style/Widget.fakeBook.Button"
+            app:shapeAppearanceOverlay="@style/buttonShape"
+            android:text="Login"
+            android:layout_marginStart="145dp"
+            android:onClick="loginButton"
+            android:layout_marginTop="16dp" />
+
+
+    </LinearLayout>
+</ScrollView>
