@@ -30,7 +30,6 @@ class CreatePostActivity : AppCompatActivity() {
     private lateinit var btnUploadImage : Button
     private lateinit var imgPreview : ImageView
     private lateinit var etCaption : EditText
-
     lateinit var bottomNav: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,15 +58,12 @@ class CreatePostActivity : AppCompatActivity() {
                     finish()
                     true
                 }
-
                 R.id.profile -> {
                     val intent = Intent(this, ProfileActivity::class.java)
                     intent.putExtra("userName", userName)
                     startActivity(intent)
                     finish()
-                    true
-                }
-
+                    true }
                 R.id.upload -> {
                     val intent = Intent(this, CreatePostActivity::class.java)
                     intent.putExtra("userName", userName)
@@ -75,16 +71,12 @@ class CreatePostActivity : AppCompatActivity() {
                     finish()
                     true
                 }
-
                 else -> {false}
             }}
-
-
         btnChooseImage.setOnClickListener {
             // Code to open gallery and pick an image
             pickImageFromGallery()
         }
-
         btnUploadImage.setOnClickListener {
             if (::chosenImageUri.isInitialized) {
                 val storageRef =
@@ -131,7 +123,7 @@ class CreatePostActivity : AppCompatActivity() {
             "date" to date,
             "hates" to hates,
             "likes" to likes)
-        firestore.collection("posts") // Replace with your collection name
+        firestore.collection("users") // Replace with your collection name
             .add(imageData)
             .addOnSuccessListener { documentReference ->
                 Log.d("saving to firestore","Image URL and other data saved in Firestore")

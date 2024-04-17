@@ -93,7 +93,7 @@ class RegisterActivity : AppCompatActivity() {
             db.collection("users").document(username).set(profile)
                 .addOnSuccessListener { documentReference ->
                     Log.d("Profile Creation","Successfully created profile")
-                    db.collection("users").document(username).collection("posts").add(username)
+                    //db.collection("users").document(username).collection("posts").add(username)
                 }
                 .addOnFailureListener { e ->
                     Log.d("Profile Creation","Failed when creating profile")

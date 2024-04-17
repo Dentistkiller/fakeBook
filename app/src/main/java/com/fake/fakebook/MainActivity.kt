@@ -36,10 +36,7 @@ class MainActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this) // Vertical
         postsRecyclerView.layoutManager = layoutManager
 
-
-
         tvName.setText(userName)
-
 
         bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
@@ -50,7 +47,6 @@ class MainActivity : AppCompatActivity() {
                     finish()
                     true
                 }
-
                 R.id.profile -> {
                     val intent = Intent(this, ProfileActivity::class.java)
                     intent.putExtra("userName", userName)
@@ -58,7 +54,6 @@ class MainActivity : AppCompatActivity() {
                     finish()
                     true
                 }
-
                 R.id.upload -> {
                     val intent = Intent(this, CreatePostActivity::class.java)
                     intent.putExtra("userName", userName)
@@ -66,17 +61,11 @@ class MainActivity : AppCompatActivity() {
                     finish()
                     true
                 }
-
                 else -> {false}
             }
         }
-
         fetchPostsFromFirestore()
     }
-
-
-
-
     private fun fetchPostsFromFirestore() {
         db.collection("posts") // Replace with your collection name
             .get()
