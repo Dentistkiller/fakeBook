@@ -10,7 +10,7 @@ class PostAdapter(private val posts: List<Posts>) : RecyclerView.Adapter<PostVie
         val view = LayoutInflater.from(parent.context).inflate(R.layout.post_item_layout, parent, false)
         return PostViewHolder(view)
     }
-    override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: PostViewHolder, position: Int) {`
         val post = posts[position]
         holder.bind(post) // Implement binding logic in PostViewHolder
     }

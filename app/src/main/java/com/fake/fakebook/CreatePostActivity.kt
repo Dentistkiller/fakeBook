@@ -101,13 +101,10 @@ class CreatePostActivity : AppCompatActivity() {
                 }
             } else {
                 Log.d("image upload", "No image detected")
-            }
-        }
-    }
+            }        }    }
     private fun pickImageFromGallery() {
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-        startActivityForResult(intent, REQUEST_CODE_IMAGE_PICKER)
-    }
+        startActivityForResult(intent, REQUEST_CODE_IMAGE_PICKER)    }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_CODE_IMAGE_PICKER && resultCode == RESULT_OK) {
@@ -131,6 +128,8 @@ class CreatePostActivity : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Log.d("saving to firestore","Image URL and other data saved in Firestore")
             }
+
+
     }
     companion object {
         private const val REQUEST_CODE_IMAGE_PICKER = 100
