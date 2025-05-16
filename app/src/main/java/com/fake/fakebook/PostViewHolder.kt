@@ -32,7 +32,8 @@ class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             Glide.with(itemView.context)
                 .load(post.imageUrl + ".jpeg")
                 .into(imageView)
-            usernameText.text = "${post.username} : ${post.caption}"
+            usernameText.text = "${post.username} "
+            captionText.text = "${post.caption} "
             likesText.text = "Likes: ${post.likes}"
             hatesText.text = "Hates: ${post.hates}"
         }
@@ -43,7 +44,7 @@ class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             post.isHated = !post.isHated
             if (post.isHated) {
                 post.HatesCount++ // Increment likes
-                hatesButton.setImageResource(R.drawable.vecteezy_broken_heart_icon_on_white_background_12243502) // Assume this is your red heart icon
+                hatesButton.setImageResource(R.drawable.vecteezy_broken_heart_icon_on_white_background_12243502) // this is your red heart icon
             } else {
                 post.HatesCount-- // Decrement likes
                 hatesButton.setImageResource(R.drawable.heart_3510) // Assume this is your white heart icon
@@ -78,7 +79,7 @@ class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         if (item.isHated) {
             hatesButton.setImageResource(R.drawable.vecteezy_broken_heart_icon_on_white_background_12243502) // Red heart
         } else {
-            likesButton.setImageResource(R.drawable.heart_3510) // White heart
+            hatesButton.setImageResource(R.drawable.heart_3510) // White heart
         }
     }
 

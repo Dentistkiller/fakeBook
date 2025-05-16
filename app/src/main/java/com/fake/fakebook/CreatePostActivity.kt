@@ -77,6 +77,7 @@ class CreatePostActivity : AppCompatActivity() {
             // Code to open gallery and pick an image
             pickImageFromGallery()
         }
+
         btnUploadImage.setOnClickListener {
             if (::chosenImageUri.isInitialized) {
                 val storageRef =
@@ -104,6 +105,7 @@ class CreatePostActivity : AppCompatActivity() {
             }
         }
     }
+
     private fun pickImageFromGallery() {
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         startActivityForResult(intent, REQUEST_CODE_IMAGE_PICKER)
@@ -115,6 +117,7 @@ class CreatePostActivity : AppCompatActivity() {
             imgPreview.setImageURI(chosenImageUri)
         }
     }
+
     private fun saveImageUrlInFirestore(imageUrl: String, username: String, caption: String, date: String, hates: String, likes: String) {
         val imageData = hashMapOf(
             "imageUrl" to imageUrl,

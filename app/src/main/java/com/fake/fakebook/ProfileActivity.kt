@@ -93,8 +93,6 @@ class ProfileActivity : AppCompatActivity() {
 
         }
 
-
-
         btnSaveProfile.setOnClickListener {
             saveProfileData()
         }
@@ -150,15 +148,12 @@ class ProfileActivity : AppCompatActivity() {
         val firstName = findViewById<EditText>(R.id.tvFirstName).text.toString().trim()
         val lastName = findViewById<EditText>(R.id.tvLastName).text.toString().trim()
         val qualification = findViewById<EditText>(R.id.tvQualification).text.toString().trim()
-
         if (firstName.isEmpty() || lastName.isEmpty() || qualification.isEmpty() || imageUri == null) {
             Toast.makeText(this,"Fill In All Fields", Toast.LENGTH_SHORT).show()
             return
         }
-
         val fileName = UUID.randomUUID().toString()
         val ref = firebaseStorage.child("uploads/$userId/$fileName")
-
         ref.putFile(imageUri!!)
             .addOnSuccessListener {
                 ref.downloadUrl.addOnSuccessListener { uri ->
@@ -193,5 +188,4 @@ class ProfileActivity : AppCompatActivity() {
             avatarIV.setImageURI(selectedImageUri)
         }
     }
-
 }

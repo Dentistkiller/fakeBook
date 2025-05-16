@@ -36,8 +36,6 @@
     <!-- Button style customization -->
     <style name="Widget.fakeBook.Button" parent="Widget.MaterialComponents.Button">
         <item name="backgroundTint">@color/blue</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:padding">16dp</item>
         <item name="android:layout_width">120dp</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
